@@ -135,7 +135,7 @@ class HttpClient
         $content = $request->getContent();
         $handle  = curl_init($url);
 
-        if (!is_resource($handle)) {
+        if ($handle === false) {
             throw new HttpClientException('Curl Error: Unable to initialize');
         }
 
